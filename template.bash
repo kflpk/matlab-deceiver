@@ -1,0 +1,8 @@
+#!/bin/bash
+
+### THIS FILE IS USED AS A TEMPLATE FOR OTHER GENERATED SCRIPT FILES
+### DO NOT RUN THIS SCRIPT
+
+export HOME="{TARGET}"
+
+/usr/local/MATLAB/{VERSION}/bin/matlab -desktop
