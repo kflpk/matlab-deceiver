@@ -20,6 +20,10 @@ This is a problem, because many programs still refuse to follow XDG guidelines o
 
 The solution is simple workaround. Matlab Deceiver modifies the `$HOME` variable before launching Matlab and before autostarting MathWorks Service Host, so that the directories that Matlab uses are located somewhere else where they don't clutter your home dir (eg. `~/.local/share/matlab` or whatever you like).
 
-# TO-DO
+## Usage
 
-The plan is to make a simple to use script that generates appropriate scripts and desktop shortcuts to launches Matlab in a clean way with minimal input from the user. Ideally the script would detect existing Matlab installation and create the wrapper automatically after asking the user for the target directory for config files. 
+To create a wrapper around Matlab, simply clone the repo and execute `./install.bash`.
+The scripts assumes that you have Matlab installed in `/usr/local/MATLAB`, and that your target fake home directory is in `$XDG_DATA_HOME/MATLAB`, typically `~/.local/share/MATLAB`. If you want to change the defaults, you can modify the variables `TARGET_DIR` and `MATLAB_BASE_PATH` before calling the script like this:
+```
+MATLAB_BASE_PATH=/path/to/matlab TARGET_DIR=/path/to/fake/home ./install.bash
+```
